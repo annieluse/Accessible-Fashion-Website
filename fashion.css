@@ -1,108 +1,173 @@
-body{
-  background-color: rgb(234, 243, 247);
+/* ==========================================================
+   Global body styles and fonts
+   ========================================================== */
+body {
   margin: 0;
-  padding: 0;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  background-color: #ffffff;  /* clean white background */
+  color: #000;
+  line-height: 1.6;
 }
 
+/* ==========================================================
+   HEADER LAYOUT
+   - Three-part flexible layout:
+       [ left (logo) ] [ center (title) ] [ right (icons) ]
+   ========================================================== */
 header {
-  background-color: #8ed8e4;
+  background-color: #8ed8e4;   /* OSU teal-blue */
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  padding: 0 40px;
-  height: 120px;
+  justify-content: space-between;
+  padding: 14px 40px;
+  height: 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
+/* Logo styling */
 .logo-container img {
-  height: 120px;
-  width: auto;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6f6f6f;
 }
 
+/* group logo + title together on the left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;   /* spacing between logo + title */
+  flex: 0;     /* prevents weird centering */
+}
+
+/* make title left-aligned inside header */
 .site-title {
-  color: rgb(0, 0, 0);
-  margin: 0;
   text-align: left;
-  flex-grow: 1; 
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
 }
 
 .site-title a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #000;
 }
 
+/* Right side header icons */
 .icon-container {
+  flex: 1;                    /* balances layout */
   display: flex;
+  justify-content: flex-end;
   gap: 20px;
 }
 
 .icon-container img {
-  height: 50px;
-  width: auto;
+  height: 40px;
+  transition: transform 0.2s ease;
 }
 
 .icon-container img:hover {
-transform: scale(1.2);   /* grow 20% on hover */
+  transform: scale(1.2);      /* hover pop effect */
   cursor: pointer;
 }
 
-.kite-one-regular {
-  font-family: "Kite One", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* ==========================================================
+   ICON NAVIGATION ROW (Companies / Products / Disabilities)
+   ========================================================== */
+.button-container {
+  margin: 35px auto 45px;
 }
 
-.default-font{
-  font-family: sans-serif;
-}
-
-.info-containers {
-  font-size: 20px; 
-  position: relative;
-  background-color: #b2e6ee;
+/* Icons row */
+.buttons {
   display: flex;
-  flex-direction: column;      
-  align-items: center;         
-  justify-content: center;    
-  text-align: center;         
-  margin: 40px auto;          
-  padding: 30px;
-  width: 60%;                
-  border-radius: 10px;       
-  color: rgb(0, 0, 0);               
-}
-
-.info-containers img{
-  height: 300px;
-  width:  auto;
-}
-
-.button-container{
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  justify-content: center; 
-}
-
-.button-labels{
-  text-align: center;  
-  display: flex;
-  justify-content: center; 
-  gap: 70px;  
+  justify-content: center;
+  gap: 160px;                 /* spacing between each icon */
 }
 
 .buttons img {
   height: 60px;
-  width: auto;
+  transition: transform 0.2s ease;
 }
 
 .buttons img:hover {
-  transform: scale(1.2);   /* grow 20% on hover */
+  transform: scale(1.2);
   cursor: pointer;
 }
 
-.buttons {
+/* Labels row (must match icon spacing exactly) */
+.button-labels {
   display: flex;
   justify-content: center;
-  gap: 120px;   /* even spacing between icons */
+  gap: 110px;                 /* must match icon gap */
+  margin-top: 0;
+}
+
+/* ==========================================================
+   SECTION TITLES + DIVIDERS
+   ========================================================== */
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 6px;
+}
+
+/* Small accent bar under each title */
+.section-divider {
+  width: 90px;
+  height: 4px;
+  background: #007c91;        /* teal accent */
+  margin: 4px auto 18px auto;
+  border-radius: 999px;
+}
+
+/* ==========================================================
+   INFORMATION CARDS (Mission, About, Sponsor)
+   ========================================================== */
+.info-containers {
+  background-color: #b2e6ee; /* lighter teal card color */
+  width: 65%;
+  margin: 25px auto;
+  padding: 28px 35px;
+  border-radius: 14px;
+  text-align: center;
+
+  /* subtle shadow for card effect */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text inside cards */
+.info-containers p {
+  font-size: 18px;
+  margin-bottom: 18px;
+  max-width: 850px;
+  line-height: 1.6;
+}
+
+/* Sponsor image styling */
+.info-containers img {
+  height: 300px;
+  width: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+  background: #6f6f6f;
+  color: white;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 14px;
 }

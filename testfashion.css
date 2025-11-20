@@ -1,0 +1,233 @@
+/* ========== Base + Variables ========== */
+
+:root {
+  --color-bg: #e5f4fa;
+  --color-header: #bde8f5;
+  --color-card: #c8ecf8;
+  --color-accent: #007c91;
+  --color-dark: #222831;
+  --color-muted: #5b6b73;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+/* ========== Header ========== */
+
+header {
+  background-color: var(--color-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-container img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6f6f6f;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-icons img {
+  width: 34px;
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header-icons img:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* ========== Layout Wrapper ========== */
+
+main {
+  padding-top: 30px;
+}
+
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* ========== Icon Navigation ========== */
+
+.nav-icons {
+  background: #f7fcff;
+  border-radius: 18px;
+  padding: 26px 24px 18px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.icon-item img {
+  width: 64px;
+  height: auto;
+}
+
+.icon-item span {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.icon-item:hover {
+  transform: translateY(-4px) scale(1.06);
+  background-color: rgba(0, 124, 145, 0.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+}
+
+/* ========== Sections + Cards ========== */
+
+.section {
+  margin-top: 48px;
+}
+
+.section-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--color-accent);
+  margin: 0 auto 24px;
+  border-radius: 999px;
+}
+
+.card {
+  background-color: var(--color-card);
+  border-radius: 18px;
+  padding: 40px 48px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Mission & About text cards */
+.card--text p {
+  margin: 0 0 14px;
+}
+
+.card--text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sponsor card layout */
+.card--sponsor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.sponsor-photo {
+  max-width: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.card--sponsor-text {
+  text-align: center;
+}
+
+/* Inline links inside cards */
+.inline-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+/* ========== Footer ========== */
+
+footer {
+  background: #6f6f6f;
+  color: white;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 14px;
+}
+
+/* ========== Responsive tweaks ========== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-icons {
+    align-self: flex-end;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+}
