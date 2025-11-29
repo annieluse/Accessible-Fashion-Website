@@ -75,90 +75,123 @@ header {
 }
 
 /* ==========================================================
-   ICON NAVIGATION ROW (Companies / Products / Disabilities)
+   MAIN CONTENT AREA
    ========================================================== */
-.button-container {
-  margin: 35px auto 45px;
-}
-
-/* Icons row */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 160px;                 /* spacing between each icon */
-}
-
-.buttons img {
-  height: 60px;
-  transition: transform 0.2s ease;
-}
-
-.buttons img:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-/* Labels row (must match icon spacing exactly) */
-.button-labels {
-  display: flex;
-  justify-content: center;
-  gap: 110px;                 /* must match icon gap */
-  margin-top: 0;
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
 }
 
 /* ==========================================================
-   SECTION TITLES + DIVIDERS
+   PAGE TITLE & INTRO
    ========================================================== */
-.section-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 32px;
+.page-header {
   text-align: center;
-  margin-top: 25px;
-  margin-bottom: 6px;
+  margin-bottom: 50px;
 }
 
-/* Small accent bar under each title */
-.section-divider {
+.page-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-divider {
   width: 90px;
   height: 4px;
-  background: #007c91;        /* teal accent */
-  margin: 4px auto 18px auto;
+  background: #007c91;
+  margin: 8px auto 20px;
   border-radius: 999px;
 }
 
+.page-intro {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
 /* ==========================================================
-   INFORMATION CARDS (Mission, About, Sponsor)
+   COMPANY CARDS LIST (Vertical Stack)
    ========================================================== */
-.info-containers {
-  background-color: #b2e6ee; /* lighter teal card color */
-  width: 65%;
-  margin: 25px auto;
-  padding: 28px 35px;
-  border-radius: 14px;
-  text-align: center;
-
-  /* subtle shadow for card effect */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-
+.cards-container {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-card {
+  background-color: #b2e6ee;
+  border-radius: 14px;
+  padding: 35px 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
   align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: #000;
 }
 
-/* Text inside cards */
-.info-containers p {
-  font-size: 18px;
-  margin-bottom: 18px;
-  max-width: 850px;
-  line-height: 1.6;
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
 }
 
-/* Sponsor image styling */
-.info-containers img {
-  height: 300px;
-  width: auto;
-  margin-bottom: 20px;
+/* Company logo in card */
+.company-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: #fff;
   border-radius: 10px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Company info section */
+.company-info {
+  flex: 1;
+}
+
+/* Company name */
+.company-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+/* Company tagline/description */
+.company-card p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  color: #222;
+}
+
+/* Learn more button */
+.learn-more-btn {
+  background-color: #007c91;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.company-card:hover .learn-more-btn {
+  background-color: #005f6f;
 }
 
 /* ==========================================================
@@ -170,4 +203,30 @@ footer {
   text-align: center;
   padding: 18px 12px;
   font-size: 14px;
+  margin-top: 60px;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 12px;
+  }
+
+  .icon-container {
+    align-self: flex-end;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
 }
