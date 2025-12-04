@@ -115,9 +115,9 @@ main {
 }
 
 /* ==========================================================
-   COMPANY CARDS LIST (Vertical Stack)
+   POST CARDS LIST (Vertical Stack)
    ========================================================== */
-.cards-container {
+#post-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -127,7 +127,7 @@ main {
   margin-right: auto;
 }
 
-.company-card {
+.post-card {
   background-color: #b2e6ee;
   border-radius: 14px;
   padding: 35px 40px;
@@ -140,14 +140,14 @@ main {
   color: #000;
 }
 
-.company-card:hover {
+.post-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
   cursor: pointer;
 }
 
 /* Company logo in card */
-.company-logo {
+.post-card img {
   width: 120px;
   height: 120px;
   object-fit: contain;
@@ -157,42 +157,28 @@ main {
   flex-shrink: 0;
 }
 
-/* Company info section */
-.company-info {
-  flex: 1;
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Company name */
-.company-card h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
+.tag {
+  background: #ffe6b6;
+  color: #000000;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
-/* Company tagline/description */
-.company-card p {
-  font-size: 17px;
-  line-height: 1.6;
-  margin: 0 0 18px 0;
-  color: #222;
+.tag-button.active {
+    background-color: #946090;
+    color: white;
+    font-weight: 600;
 }
 
-/* Learn more button */
-.learn-more-btn {
-  background-color: #007c91;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-  transition: background-color 0.2s ease;
-  display: inline-block;
-}
-
-.company-card:hover .learn-more-btn {
-  background-color: #005f6f;
-}
 
 /* ==========================================================
    FOOTER
@@ -260,7 +246,7 @@ footer {
 
 /* Make buttons look like rounded pills again */
 .tag-button {
-  background: #f4d88c;
+  background: #ffe6b6;
   border: none;
   padding: 7px 14px;
   border-radius: 22px;
