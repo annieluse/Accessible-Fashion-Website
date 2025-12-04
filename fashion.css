@@ -78,18 +78,22 @@ header {
    ICON NAVIGATION ROW (Companies / Products / Disabilities)
    ========================================================== */
 .button-container {
+  width: 80%;
   margin: 35px auto 45px;
 }
 
-/* Icons row */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 160px;                 /* spacing between each icon */
+/* Make both rows a 4-column grid */
+.buttons,
+.button-labels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* four equal columns */
+  text-align: center;
 }
 
+/* Icon styling */
 .buttons img {
   height: 60px;
+  margin: auto;
   transition: transform 0.2s ease;
 }
 
@@ -98,13 +102,12 @@ header {
   cursor: pointer;
 }
 
-/* Labels row (must match icon spacing exactly) */
-.button-labels {
-  display: flex;
-  justify-content: center;
-  gap: 110px;                 /* must match icon gap */
-  margin-top: 0;
+/* Label styling */
+.button-labels p {
+  margin-top: 10px;
+  font-size: 18px;
 }
+
 
 /* ==========================================================
    SECTION TITLES + DIVIDERS
