@@ -3,7 +3,7 @@
    ========================================================== */
 body {
   margin: 0;
-  font-family: "Nunito", "Segoe UI", sans-serif;
+  font-family: "Lato", "Segoe UI", serif;
   background-color: #ffffff;  /* clean white background */
   color: #000;
   line-height: 1.6;
@@ -88,6 +88,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);  /* four equal columns */
   text-align: center;
+  font-family: "Lato", sans-serif;
 }
 
 /* Icon styling */
@@ -104,6 +105,7 @@ header {
 
 /* Label styling */
 .button-labels p {
+  font-family: "Lato", sans-serif;
   margin-top: 10px;
   font-size: 18px;
 }
@@ -113,7 +115,7 @@ header {
    SECTION TITLES + DIVIDERS
    ========================================================== */
 .section-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito:wght@600", sans-serif;
   font-size: 32px;
   text-align: center;
   margin-top: 25px;
