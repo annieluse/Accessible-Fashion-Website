@@ -1,0 +1,313 @@
+/* ==========================================================
+   Global body styles and fonts
+   ========================================================== */
+body {
+  margin: 0;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  background-color: #ffffff;  /* clean white background */
+  color: #000;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   HEADER LAYOUT
+   - Three-part flexible layout:
+       [ left (logo) ] [ center (title) ] [ right (icons) ]
+   ========================================================== */
+header {
+  background-color: #8ed8e4;   /* OSU teal-blue */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  height: 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo styling */
+.logo-container img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6f6f6f;
+}
+
+/* group logo + title together on the left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;   /* spacing between logo + title */
+  flex: 0;     /* prevents weird centering */
+}
+
+/* make title left-aligned inside header */
+.site-title {
+  text-align: left;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Right side header icons */
+.icon-container {
+  flex: 1;                    /* balances layout */
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.icon-container img {
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.icon-container img:hover {
+  transform: scale(1.2);      /* hover pop effect */
+  cursor: pointer;
+}
+
+/* ==========================================================
+   MAIN CONTENT AREA
+   ========================================================== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* ==========================================================
+   PAGE TITLE & INTRO
+   ========================================================== */
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-divider {
+  width: 90px;
+  height: 4px;
+  background: #007c91;
+  margin: 8px auto 20px;
+  border-radius: 999px;
+}
+
+.page-intro {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   COMPANY CARDS LIST (Vertical Stack)
+   ========================================================== */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-card {
+  background-color: #b2e6ee;
+  border-radius: 14px;
+  padding: 35px 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: #000;
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+/* Company logo in card */
+.company-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Company info section */
+.company-info {
+  flex: 1;
+}
+
+/* Company name */
+.company-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+/* Company tagline/description */
+.company-card p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  color: #222;
+}
+
+/* Learn more button */
+.learn-more-btn {
+  background-color: #007c91;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.company-card:hover .learn-more-btn {
+  background-color: #005f6f;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+  background: #6f6f6f;
+  color: white;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 12px;
+  }
+
+  .icon-container {
+    align-self: flex-end;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+
+/* ==========================================================
+   Sort and filter
+   ========================================================== */
+/* Parent container for both tag groups */
+.filter-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 35px;
+  flex-wrap: wrap; /* keeps layout clean on smaller screens */
+}
+
+/* Individual tag boxes */
+.filter-box {
+  background: #b7e4ee;
+  padding: 30px 35px;
+  border-radius: 22px;
+  width: 450px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+  transition: 0.25s ease;
+}
+
+.filter-box:hover {
+  transform: translateY(-3px);
+}
+
+/* Make buttons look like rounded pills again */
+.tag-button {
+  background: #f4d88c;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.tag-button:hover {
+  background: #edc66c;
+  transform: scale(1.06);
+}
+
+/* Make tag grid tighter and centered */
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Reduce padding to improve text-block balance */
+.filter-box {
+  padding: 25px 30px 30px;
+  width: 430px; /* Slightly narrower to match screenshot spacing */
+}
+
+/* Align icon + title better visually */
+.tag-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.filter-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Optional slight vertical nudge on icon */
+.tag-icon {
+  width: 24px;
+  transform: translateY(2px);
+}
