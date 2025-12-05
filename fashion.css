@@ -45,9 +45,9 @@ header {
 .site-title {
   text-align: left;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 800;
   padding: 20px;
 }
 
@@ -88,7 +88,8 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);  /* four equal columns */
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
 }
 
 /* Icon styling */
@@ -105,7 +106,8 @@ header {
 
 /* Label styling */
 .button-labels p {
-  font-family: "Lato", sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
   margin-top: 10px;
   font-size: 18px;
 }
@@ -115,7 +117,8 @@ header {
    SECTION TITLES + DIVIDERS
    ========================================================== */
 .section-title {
-  font-family: "Nunito:wght@600", sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 600;
   font-size: 32px;
   text-align: center;
   margin-top: 25px;
